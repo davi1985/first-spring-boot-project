@@ -4,19 +4,22 @@ Lesson video:<br/>
 [![Image](https://img.youtube.com/vi/nQr_X62vq-k/mqdefault.jpg "Vídeo no Youtube")](https://youtu.be/nQr_X62vq-k)
 
 ## Sumário
+
 - [What let's learn?](#O-que-você-vai-aprender)
-- [Pré-requisitos](#Pré-requisitos)
-- [Links sobre REST](#Links-sobre-REST)
-- [Passos](#Passos)
+- [Links to Learn REST/Web Services](#Links-to-Learn-REST/Web-Services)
+- [What you need to know](#What-you-need-to-know)
+- [Steps](#Steps)
 - [Diagramas](#Diagramas)
 
 ## What let's learn?
+
 - Building an simple Java Application using Spring Boot and Maven
 - Intro Spring Dependency Injection
 - ntroduction to RESTful Web Services
 - Intro to Spring Data JPA with H2 database
 
 ## Links to Learn REST/Web Services
+
 - https://restfulapi.net/
 - https://martinfowler.com/articles/richardsonMaturityModel.html
 - https://pt.stackoverflow.com/questions/45783/o-que-%C3%A9-rest-e-restful/45787
@@ -26,7 +29,7 @@ Lesson video:<br/>
 - Logic programming
 - Basic of Object-Oriented Programming
   - Object composition (watch this: https://github.com/devsuperior/aulao004)
-- Basic Database Concepts 
+- Basic Database Concepts
 
 ## Steps
 
@@ -80,7 +83,7 @@ public class CategoryRepository {
 	public Category findById(Long id) {
 		...
 	}
-	
+
 	public List<Category> findAll() {
 		...
 	}
@@ -88,6 +91,7 @@ public class CategoryRepository {
 ```
 
 - Implement CommandLineRunner to instantiate categories at the startup application. Use Spring Boot's ** dependency injection ** mechanism to get an instance of CategoryRepository.
+
 ```java
 Category cat1 = new Category(1L, "Electronics");
 Category cat2 = new Category(2L, "Books");
@@ -142,6 +146,7 @@ spring.jpa.properties.hibernate.format_sql=true
 ```
 
 - To make objetc-realtional mapping
+
 ```java
 @Entity
 public class Product implements Serializable {
@@ -152,7 +157,7 @@ public class Product implements Serializable {
 	private Long id;
 	private String name;
 	private Double price;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
